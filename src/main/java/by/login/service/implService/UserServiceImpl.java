@@ -39,4 +39,9 @@ public class UserServiceImpl implements UserService {
     public void delete(User user) {
         userRepository.delete(user);
     }
+
+    @Override
+    public Optional<User> findUserByMailAndPassword(String mail, String password) {
+        return userRepository.findByMailAndPassword(mail,password);
+    }
 }

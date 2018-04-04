@@ -28,4 +28,6 @@ public interface UserRepository extends CrudRepository<User, Long> {
 
     @Override
     void delete(User user);
+
+    Optional<User> findByMailAndPassword(String mail, String password);
 }

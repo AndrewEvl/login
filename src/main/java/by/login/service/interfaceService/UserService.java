@@ -1,8 +1,6 @@
 package by.login.service.interfaceService;
 
 import by.login.entity.User;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -15,4 +13,6 @@ public interface UserService {
     Optional<User> findById(Long id);
 
     void delete(User user);
+
+    Optional<User> findUserByMailAndPassword (String mail, String password);
 }
