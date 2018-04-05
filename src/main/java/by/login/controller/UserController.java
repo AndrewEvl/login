@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UserController {
 
     private UserRepository userRepository;
-    private Long ID;
+    private static Long ID;
 
     @Autowired
     public UserController(UserRepository userRepository) {
@@ -53,17 +53,19 @@ public class UserController {
     public String findUserByIdPost(User user, Model model){
         User userById = userRepository.findById(user.getId()).get();
         ID = user.getId();
-//        model.addAttribute("id",userById.getId());
+        model.addAttribute("user", userById);
         return "redirect:/user-info";
     }
 
     @GetMapping("/user-info")
     public String userInfoGet (Model model){
+        User user = userRepository.findById(ID).get();
+        model.addAttribute("user",user);
         model.addAttribute("id",ID);
-        return "redirect:/user-info/{id}";
+        return "user-info";
     }
 
-    @GetMapping("/user-info/{id}")
+    @GetMapping("/user-info{id}")
     public String userInfoIdGet (@PathVariable ("id") Long id,Model model){
         User user = userRepository.findById(id).get();
         model.addAttribute("user", user);

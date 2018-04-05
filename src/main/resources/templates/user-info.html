@@ -5,6 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-hello!
+<div>
+    <h th:text="${user.id}">ID user</h>
+    <h th:text="${user.firstName}">User first name</h>
+    <h th:text="${user.lastName}">User last name</h>
+    <h th:text="${user.mail}">User mail</h>
+    <h th:text="${user.status}">User status</h>
+</div>
 </body>
 </html>
