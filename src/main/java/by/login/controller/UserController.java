@@ -61,6 +61,7 @@ public class UserController {
                 e.printStackTrace();
             }
         }
+        stub();
         user.setStatusNow(Status.ONLINE);
         userRepository.save(user);
         return "redirect:/";
@@ -73,6 +74,7 @@ public class UserController {
 
     @PostMapping("/find-user")
     public String findUserByIdPost(User user, Model model) {
+        stub();
         User userById = userRepository.findById(user.getId()).get();
         ID = user.getId();
         model.addAttribute("user", userById);
@@ -90,6 +92,7 @@ public class UserController {
                 .nextInt(Status.values().length)]);
         user.setPreviousStatus(statusNow);
         userRepository.save(user);
+        stub();
         model.addAttribute("user", user);
         model.addAttribute("id", ID);
         model.addAttribute("image", "/" + user.getImage());
@@ -101,6 +104,15 @@ public class UserController {
         User user = userRepository.findById(id).get();
         model.addAttribute("user", user);
         return "user-info";
+    }
+
+    //Stub for 3 seconds.
+    private void stub (){
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }
