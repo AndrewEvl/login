@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+<a th:href="@{/}">Create user</a>
 <form th:action="@{/find-user}" method="post" th:object="${user}">
     <label>Enter id User :
         <input type="number" th:field="*{id}">

@@ -15,9 +15,6 @@ public interface UserRepository extends CrudRepository<User, Long> {
     <S extends User> S save(S s);
 
     @Override
-    <S extends User> Iterable<S> saveAll(Iterable<S> iterable);
-
-    @Override
     Optional<User> findById(Long aLong);
 
     @Override

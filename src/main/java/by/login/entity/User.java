@@ -25,6 +25,10 @@ public class User extends BaseEntity {
     private String mail;
     @Column(name = "password")
     private String password;
-    @Column(name = "status")
-    private Status status;
+    @Column(name = "status_now")
+    private Status statusNow;
+    @Column(name = "previous_status")
+    private Status previousStatus;
+    @Column(name = "image")
+    private String image;
 }

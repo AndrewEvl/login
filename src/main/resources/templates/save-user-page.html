@@ -2,11 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Create user</title>
 </head>
 <body>
+<a th:href="@{/find-user}">Find user on ID</a>
 <div>
-    <form th:action="@{/}" method="post" th:object="${user}">
+    <form th:action="@{/}" method="post" th:object="${user}" enctype="multipart/form-data">
         <label>Enter first name :
             <input type="text" th:field="*{firstName}">
         </label>
@@ -19,6 +20,8 @@
         <label>Enter you password :
             <input type="password" th:field="*{password}">
         </label>
+        File to upload :
+        <input type="file" name="file"><br/>
         <button type="submit">Save</button>
     </form>
 </div>
