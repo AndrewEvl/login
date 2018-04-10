@@ -60,14 +60,6 @@ public class UserRepositoryTest {
         assertNull(userRepository.findById(id));
     }
 
-    @Test
-    public void findByMailAndPassword() {
-        User user = createUser();
-        userRepository.save(user);
-        Optional<User> byMailAndPassword = userRepository.findByMailAndPassword(user.getMail(), user.getPassword());
-        assertNotNull(byMailAndPassword);
-    }
-
     private User createUser (){
         User user = new User();
         user.setFirstName("Test first name");
