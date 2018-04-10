@@ -11,19 +11,34 @@
         <label>Enter first name :
             <input type="text" th:field="*{firstName}">
         </label>
-        <label>Enter last name :
-            <input type="text" th:field="*{lastName}">
-        </label>
-        <label>Enter you mail :
-            <input type="email" th:field="*{mail}">
-        </label>
-        <label>Enter you password :
-            <input type="password" th:field="*{password}">
-        </label>
-        File to upload :
-        <input type="file" name="file"><br/>
+        <p>
+            <label>Enter last name :
+                <input type="text" th:field="*{lastName}">
+            </label>
+        </p>
+        <p>
+            <label>Enter you mail :
+                <input type="email" th:field="*{mail}">
+            </label>
+        </p>
+        <p>
+            <label>Enter you password :
+                <input type="password" th:field="*{password}">
+            </label>
+        </p>
+        <p>
+            Upload you avatar :
+            <input type="file" name="file"><br/>
+        </p>
         <button type="submit">Save</button>
     </form>
+</div>
+<div th:if="${id}" th:utext="${id}"
+     style="color: green">
+
+</div>
+<div th:if="${errorMassage}" th:utext="${errorMassage}"
+     style="color: red">
 </div>
 </body>
 </html>

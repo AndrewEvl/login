@@ -5,23 +5,31 @@
     <title>User info</title>
 </head>
 <body>
-<a th:href="@{/}">Create user</a>
+<a th:href="@{/}">Create user</a> |
 <a th:href="@{/find-user}">Find user on ID</a>
 <div>
     ID user :
-    <p th:text="${user.id}">ID user</p>
+    <strong  th:text="${user.id}">ID user</strong>
+    <p>__________________________________________________________</p>
     User first name :
-    <p th:text="${user.firstName}">User first name</p>
+    <strong th:text="${user.firstName}">User first name</strong>
+    <p>__________________________________________________________</p>
     User last name :
-    <p th:text="${user.lastName}">User last name</p>
+    <strong th:text="${user.lastName}">User last name</strong>
+    <p>__________________________________________________________</p>
     User mail :
-    <p th:text="${user.mail}">User mail</h>
+    <strong th:text="${user.mail}">User mail</strong>
+    <p>__________________________________________________________</p>
     User status now :
-    <p th:text="${user.statusNow}">User status now</p>
+    <strong th:text="${user.statusNow}">User status now</strong>
+    <p>__________________________________________________________</p>
     User previous status :
-    <p th:text="${user.previousStatus}">User previous status</p>
+    <strong th:text="${user.previousStatus}">User previous status</strong>
+    <p>__________________________________________________________</p>
     User avatar URL :
-    <p th:text="${user.image}">User avatar URL</p>
+    <strong th:text="${user.image}">User avatar URL</strong>
+    <p>__________________________________________________________</p>
+
     <picture th:src="@{image}"></picture>
 </div>
 </body>

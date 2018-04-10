@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Find user by ID</title>
 </head>
 <body>
 <a th:href="@{/}">Create user</a>
@@ -12,5 +12,10 @@
     </label>
     <button type="submit">Find by id</button>
 </form>
+<div>
+    <div th:if="${errorId}" th:utext="${errorId}"
+         style="color: red">
+    </div>
+</div>
 </body>
 </html>
