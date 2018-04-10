@@ -33,11 +33,6 @@ public class UserController {
         return new User();
     }
 
-//    @ModelAttribute("id")
-//    public Long id() {
-//        return null;
-//    }
-
     @Value("${error.massage}")
     private String errorMassage;
 
